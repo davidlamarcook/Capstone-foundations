@@ -30,8 +30,14 @@ function postFood(e) {
         rating_comment: ratingComment.value
     }
     axios.post('http://localhost:5678/food', body)
-    .then()
+    .then(res => {
+
+    })
 }
+
+//function createReviewCard() {
+//
+//}
 
 getFood()
 
