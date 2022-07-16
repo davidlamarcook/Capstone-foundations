@@ -46,7 +46,9 @@ function createReviewCard() {
 
     axios.get('http://localhost:5678/reviews')
     .then(res => {
-        console.log(res.data)
+        ratingContainer.innerHTML = ''
+        let results = res.data
+        console.log(results)
         res.data.forEach(elem => {
          let reviewCard = `<div class="review-card">
              <h2>${elem.food_name}</h2>
@@ -55,7 +57,7 @@ function createReviewCard() {
              <h3>Location: ${elem.rating_location}<h3>
              <h3>Comments: ${elem.rating_comment}<h3>
              </div>`
-             
+
             ratingContainer.innerHTML += reviewCard
        })
     })
