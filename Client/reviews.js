@@ -46,14 +46,15 @@ function createReviewCard() {
 
     axios.get('http://localhost:5678/reviews')
     .then(res => {
-       res.data.forEach(elem => {
         console.log(res.data)
-        let reviewCard = `<div class="review-card">
-            <h2>${elem.food_name}</h2>
-            <h3>Raing: ${elem.stars}<h3>
-            <h3>Date: ${elem.rating_date}<h3>
-            <h3>Location: ${elem.rating_location}<h3>
-            <h3>Comments: ${elem.rating_comment}<h3>`
+        res.data.forEach(elem => {
+         let reviewCard = `<div class="review-card">
+             <h2>${elem.food_name}</h2>
+             <h3>Rating: ${elem.stars}<h3>
+             <h3>Date: ${elem.rating_date}<h3>
+             <h3>Location: ${elem.rating_location}<h3>
+             <h3>Comments: ${elem.rating_comment}<h3>
+             </div>`
 
             ratingContainer.innerHTML += reviewCard
        })

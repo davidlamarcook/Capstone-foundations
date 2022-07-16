@@ -35,7 +35,7 @@ module.exports = {
         SELECT food_item.food_name, ratings.rating_id, ratings.stars, ratings.rating_date, ratings.rating_location, ratings.rating_comment FROM ratings
         JOIN food_item ON ratings.food_item_id = food_item.food_item_id
         `)
-        .then(dbRes => console.log(dbRes[0]))
+        .then(dbRes => res.status(200).send(dbRes[0]))
 
     }
    
