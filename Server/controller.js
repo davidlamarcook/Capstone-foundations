@@ -21,14 +21,22 @@ module.exports = {
     },
 
     postFood: (req, res) => {
-        console.log(req.body)
+        //console.log(req.body)
         let {food_item_id, stars, rating_date, rating_location, rating_comment} = req.body
         sequelize.query(`
         INSERT INTO ratings (food_item_id, stars, rating_date, rating_location, rating_comment)
         VALUES (${food_item_id}, ${stars}, '${rating_date}', '${rating_location}', '${rating_comment}');
         `)
-        .then(dbRes => console.log(dbRes[0]))
-    }
+        .then(dbRes => res.status(201).send())
+    },
 
-    
+    getReview: (req, res) => {
+        sequelize.query(`
+        SELECT food_item.food_name, ratings.rating_id, ratings.stars, ratings.rating_date, ratings.rating_location, ratings.rating_comment FROM ratings
+        JOIN food_item ON ratings.food_item_id = food_item.food_item_id
+        `)
+        .then(dbRes => console.log(dbRes[0]))
+
+    }
+   
 }

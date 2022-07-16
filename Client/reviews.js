@@ -1,10 +1,11 @@
 const form = document.querySelector('form')
 const itemSelect = document.querySelector('#item-select')
-const starInput = document.querySelector('input[name=ratings]:checked')
+//let starInput = document.querySelector('input[name=ratings]:checked').value
 const ratingDate = document.querySelector('#date')
 const ratingLocation = document.querySelector('#location')
 const ratingComment = document.querySelector('#comments')
 const addBtn = document.querySelector('#addBtn')
+const ratingContainer = document.querySelector('#review-container')
 
 function getFood() {
     axios.get('http://localhost:5678/food')
@@ -21,24 +22,44 @@ function getFood() {
 
 function postFood(e) {
     e.preventDefault()
-    console.log(ratingDate.value)
+    let starInput = document.querySelector('input[name=ratings]:checked').value
+
     let body = {
         food_item_id: itemSelect.value,
-        stars: +starInput.value,
+        stars: +starInput,
         rating_date: ratingDate.value,
         rating_location: ratingLocation.value,
         rating_comment: ratingComment.value
     }
+    //console.log(body.stars)
     axios.post('http://localhost:5678/food', body)
-    .then(res => {
-
+    .then(() => {
+        ratingLocation.value = ''
+        ratingComment.value = ''
+        document.querySelector('#one').checked = true
+        createReviewCard()
     })
 }
 
-//function createReviewCard() {
-//
-//}
+function createReviewCard() {
+    ratingContainer.value = ''
+
+    axios.get('http://localhost:5678/reviews')
+    .then(res => {
+       res.data.forEach(elem => {
+        console.log(res.data)
+        let reviewCard = `<div class="review-card">
+            <h2>${elem.food_name}</h2>
+            <h3>Raing: ${elem.stars}<h3>
+            <h3>Date: ${elem.rating_date}<h3>
+            <h3>Location: ${elem.rating_location}<h3>
+            <h3>Comments: ${elem.rating_comment}<h3>`
+
+            ratingContainer.innerHTML += reviewCard
+       })
+    })
+}
 
 getFood()
-
+createReviewCard()
 addBtn.addEventListener('click', postFood)
