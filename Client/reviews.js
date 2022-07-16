@@ -55,7 +55,7 @@ function createReviewCard() {
              <h3>Location: ${elem.rating_location}<h3>
              <h3>Comments: ${elem.rating_comment}<h3>
              </div>`
-
+             
             ratingContainer.innerHTML += reviewCard
        })
     })
