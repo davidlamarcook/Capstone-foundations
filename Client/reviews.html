@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reviews.css">
     <title>David's Burgers</title>
 </head>
 <body>
@@ -22,49 +24,51 @@
         <h1>Leave Us a Review</h1>
     </section>
 
+    <main>
     <form>
         <label for="item-select">Pick a Menu Item:</label><br/>
         <select id="item-select"></select><br/><br/>
 
-        <label></label>Give It a Rating</label>
-        <div class="radio-btns">
-            <input type="radio" id="one" name="ratings" value="1" checked="true">
-            <label for="one">One</label>
-        </div>
+            <label></label>Give It a Rating</label>
+            <div class="radio-btns">
+                <input type="radio" id="one" name="ratings" value="1" checked="true">
+                <label for="one">One</label>
+            </div>
 
-        <div class="radio-btns">
-            <input type="radio" id="two" name="ratings" value="2">
-            <label for="two">Two</label>
-        </div>
+            <div class="radio-btns">
+                <input type="radio" id="two" name="ratings" value="2">
+                <label for="two">Two</label>
+            </div>
 
-        <div class="radio-btns">
-            <input type="radio" id="three" name="ratings" value="3">
-            <label for="three">Three</label>
-        </div>
+            <div class="radio-btns">
+                <input type="radio" id="three" name="ratings" value="3">
+                <label for="three">Three</label>
+            </div>
 
-        <div class="radio-btns">
-            <input type="radio" id="four" name="ratings" value="4">
-            <label for="four">Four</label>
-        </div>
+            <div class="radio-btns">
+                <input type="radio" id="four" name="ratings" value="4">
+                <label for="four">Four</label>
+            </div>
 
-        <div class="radio-btns">
-            <input type="radio" id="five" name="ratings" value="5">
-            <label for="five">Five</label>
-        </div>
-        <br/>
-        <label>Date</label><br/>
-        <input type="date" id="date" name="date"><br/><br/>
+            <div class="radio-btns">
+                <input type="radio" id="five" name="ratings" value="5">
+                <label for="five">Five</label>
+            </div>
+            <br/>
+            <label>Date</label><br/>
+            <input type="date" id="date" name="date"><br/><br/>
 
-        <label>Location</label><br/>
-        <input type="text" id="location" name="location"><br/><br/>
+            <label>Location</label><br/>
+            <input type="text" id="location" name="location"><br/><br/>
 
-        <label>Likes or Dislikes?</label><br/>
-        <input type="text" id="comments" name="comments"><br/><br/>
+            <label>Likes or Dislikes?</label><br/>
+            <input type="text" id="comments" name="comments"><br/><br/>
 
-        <button id="addBtn">Add</button>
-    </form>
+            <button id="addBtn">Add</button>
+        </form>
 
-    <article id="review-container"></article>
+        <article id="review-container"></article>
+    </main>
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

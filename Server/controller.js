@@ -41,12 +41,10 @@ module.exports = {
 
     },
 
-    getOnlyThree: (req,res) => {
-        sequelize.query(`SELECT food_item.food_name, ratings.rating_id, ratings.stars, ratings.rating_date, ratings.rating_location, ratings.rating_comment FROM ratings
-        JOIN food_item ON ratings.food_item_id = food_item.food_item_id
-        ORDER BY ratings.rating_date DESC
-        LIMIT 3;`)
-        .then(dbRes => res.status(200).send(dbRes[0]))
+    getEntrees: (req,res) => {
+        sequelize.query(`SELECT photo_url, food_name, price, description FROM food_item
+        WHERE category_id = 2
+        `).then(dbRes => res.status(200).send(dbRes[0]))
     }
    
 }
