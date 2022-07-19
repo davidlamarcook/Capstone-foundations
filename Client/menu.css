@@ -48,6 +48,8 @@ header h1 {
 .category-header {
     text-align: center;
     text-decoration: underline;
+    background-color: black;
+    color: white;
 }
 
 .menu-items {
@@ -81,13 +83,4 @@ img {
     max-width: 15vw;
     /*min-height: 8vh;*/
     object-fit: cover;
-}
-
-#appetizers {
-    background-color: red;
-}
-
-#appetizer-header {
-    background-color: black;
-    color: white;
 }
