@@ -1,0 +1,93 @@
+body {
+    margin: 0px;
+    font-family: 'Lily Script One', cursive;
+}
+
+header img {
+    max-width: 19vw;
+    max-height: 17vh;
+    margin-left: 1vw;
+    position: relative;
+    top: 2vh;
+    border: black 2px solid;
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: red;
+    gap: 3vw;
+    height: 15vh;
+}
+
+header #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30vw;
+    margin-left: 25vw;
+    font-size: 20px;
+    color: white;
+}
+
+.nav-elements {
+    position: relative;
+    top: 4vh;
+}
+
+header h1 {
+    text-decoration: underline;
+    width: 20vw;
+    align-content: left;
+    color: white;
+    font-size: 5vh;
+}
+
+.category-header {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.menu-items {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    /*background-color: gray;*/
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    min-height: 18vh;
+
+}
+
+.item-card {
+    max-width: 15vw;
+    border: 2px black solid;
+    background-color: white;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 0.2);
+}
+
+.item-card h2 {
+    text-align: center;
+    text-decoration: overline;
+}
+
+.item-card h3 {
+    text-align: center;
+}
+
+img {
+    max-width: 15vw;
+    /*min-height: 8vh;*/
+    object-fit: cover;
+}
+
+#appetizers {
+    background-color: red;
+}
+
+#appetizer-header {
+    background-color: black;
+    color: white;
+}

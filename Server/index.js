@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const {SERVER_PORT} = process.env
-const {getFood, postFood, getReview, getEntrees} = require('./controller.js')
+const {getFood, postFood, getReview, getEntrees, getAppetizers, getDrinks} = require('./controller.js')
 
 app.use(express.json())
 app.use(cors())
@@ -11,6 +11,8 @@ app.use(cors())
 app.get('/food', getFood)
 app.get('/reviews', getReview)
 app.get('/entrees', getEntrees)
+app.get('/appetizers', getAppetizers)
+app.get('/drinks', getDrinks)
 
 app.post('/food', postFood)
 

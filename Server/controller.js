@@ -45,6 +45,19 @@ module.exports = {
         sequelize.query(`SELECT photo_url, food_name, price, description FROM food_item
         WHERE category_id = 2
         `).then(dbRes => res.status(200).send(dbRes[0]))
+    },
+
+    getAppetizers: (req,res) => {
+        sequelize.query(`SELECT photo_url, food_name, price, description FROM food_item
+        WHERE category_id = 1
+        `).then(dbRes => res.status(200).send(dbRes[0]))
+
+    },
+
+    getDrinks: (req,res) => {
+        sequelize.query(`SELECT photo_url, food_name, price, description FROM food_item
+        WHERE category_id = 3
+        `).then(dbRes => res.status(200).send(dbRes[0]))
     }
    
 }
