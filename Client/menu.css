@@ -22,6 +22,15 @@ header {
     height: 15vh;
 }
 
+header a {
+    font-size: 5vh;
+    color: white;
+}
+
+header a:hover {
+    color: black;
+}
+
 header #nav{
     display: flex;
     align-items: center;
@@ -68,6 +77,10 @@ header h1 {
     border: 2px black solid;
     background-color: white;
     box-shadow: 10px 10px 10px rgb(0 0 0 / 0.2);
+}
+
+.item-card:hover {
+    transform: scale(1.1, 1.1);
 }
 
 .item-card h2 {

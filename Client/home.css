@@ -20,6 +20,18 @@ header {
     background-color: red;
     gap: 3vw;
     height: 15vh;
+    border-bottom-style: solid;
+}
+
+header a {
+    font-size: 5vh;
+    color: white;
+    -webkit-text-stroke: .25px black;
+}
+
+header a:hover {
+    color: black;
+    -webkit-text-stroke: .25px white;
 }
 
 header #nav{
@@ -38,11 +50,13 @@ header h1 {
     align-content: left;
     color: white;
     font-size: 5vh;
+    -webkit-text-stroke: .25px black;
 }
 
 .nav-elements {
     position: relative;
     top: 4vh;
+    
 }
 
 #motto p {
@@ -102,7 +116,8 @@ section {
     justify-content: space-around;
     background-color: red;
     margin-top: 10vh;
-    max-height: 5vh;
+    max-height: 10vh;
+    border-top: 1px solid black;
 }
 
 section .food-category {
@@ -112,8 +127,23 @@ section .food-category {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: 4vh;
+    border: 1px solid black;
+    
 }
 
+section h3 {
+    font-size: 4vh;
+    color: white;
+    -webkit-text-stroke: .25px black;
+    text-decoration: underline;
+}
+
+section h3:hover {
+    color: black;
+    -webkit-text-stroke: .25px white;
+}
 
 #appetizers {
     background-image: url("https://i.ytimg.com/vi/DLQZIxzY_88/maxresdefault.jpg");
@@ -130,10 +160,17 @@ section .food-category {
     background-size: cover;
 }
 
+#black-banner {
+    background-color: black;
+    min-height: 3vh;
+    margin-top: 1vh;
+}
+
 #footer{
     background-color: gray;
-    min-height: 2vh;
+    min-height: 8vh;
     min-width: 100%;
     margin: 8vh;
     margin-left: 0px;
+    margin-bottom: 0px;
 }
