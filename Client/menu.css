@@ -81,6 +81,5 @@ header h1 {
 
 img {
     max-width: 15vw;
-    /*min-height: 8vh;*/
     object-fit: cover;
 }

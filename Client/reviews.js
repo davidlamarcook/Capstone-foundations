@@ -41,6 +41,11 @@ function postFood(e) {
     })
 }
 
+function deleteReview(id) {
+    axios.delete(`http://localhost:5678/reviews/${id}`)
+    .then(() => createReviewCard())
+}
+
 function createReviewCard() {
     ratingContainer.value = ''
 
@@ -56,6 +61,7 @@ function createReviewCard() {
              <h3>Date: ${elem.rating_date}<h3>
              <h3>Location: ${elem.rating_location}<h3>
              <h3>Comments: ${elem.rating_comment}<h3>
+             <button onclick="deleteReview(${elem['rating_id']})">Delete</button>
              </div>`
 
             ratingContainer.innerHTML += reviewCard
@@ -63,6 +69,9 @@ function createReviewCard() {
     })
 }
 
+
+
 getFood()
 createReviewCard()
+
 addBtn.addEventListener('click', postFood)

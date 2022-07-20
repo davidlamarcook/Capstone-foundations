@@ -58,6 +58,12 @@ module.exports = {
         sequelize.query(`SELECT photo_url, food_name, price, description FROM food_item
         WHERE category_id = 3
         `).then(dbRes => res.status(200).send(dbRes[0]))
+    },
+
+    deleteReview: (req, res) => {
+        let {id} = req.params
+        sequelize.query(`DELETE FROM ratings WHERE rating_id = ${id}
+        `).then(dbRes => res.status(200).send(dbRes[0]))
     }
    
 }
